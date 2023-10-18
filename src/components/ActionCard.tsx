@@ -31,7 +31,7 @@ export default function ActionCard({ openModal, action }: any) {
                     icon = <PhoneIcon
                         className='h-4 w-4 inline-block mr-2' />
                     return <ActionButton
-                        handleClick={() => openModal(action)}
+                        handleClick={() => openModal(action, option.type)}
                         key={key}
                     >
                         {icon} <span>{option.type}</span>
@@ -44,16 +44,17 @@ export default function ActionCard({ openModal, action }: any) {
                     return <ActionButton
                         key=
                         {key}
-                        handleClick={() => openModal(action)}>
+                        handleClick={() => openModal(action, option.type)}>
                         {icon} <span>{option.type}</span>
                     </ActionButton>
                 }
             })}
         </div>
-        <div className="flex justify-end mb-4 mx-2 text-xs">
+        < hr />
+        <div className="flex justify-end my-4 mx-2 text-xs">
             {spheres.map((sphere: string) => {
                 return <span key={`${id}--${sphere}`}
-                    className="inline-block badge-neutral rounded-full p-2 mt-4"
+                    className="inline-block badge-neutral rounded-full p-2 m-1"
                 >{sphere}</span>
             })}
         </div>

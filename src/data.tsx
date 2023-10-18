@@ -31,17 +31,33 @@ const ACTION_TYPES = {
   tweet: "Tweet",
   facebook: "Facebook",
   ttyTtd: "TTY/TDD",
+  sms: "Text",
+}
+const ACTION_TYPES_BUTTON_LABELS = {
+  call: "📱 Call Now",
+  email: "📧 Email Now",
+  tweet: "Tweet",
+  facebook: "Facebook",
+  ttyTtd: "TTY/TDD",
+  sms: "Text",
 }
 
 export const ACTIONS = [{
   icon: "🏛️",
-  label: "Contact the White House",
+  label: "Contact the White House (T-Th only)",
   id: 1,
   spheres: [CITIZEN],
+  suggestion: ["I am calling to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
+  reminder: "⭐ The person on the other side is a volunteer. Be kind or no one will want to volunteer!",
   actionOptions: [
     {
       type: ACTION_TYPES.call,
       call: "202-456-1111",
+    },
+    {
+      type: ACTION_TYPES.sms,
+      sms: "50409",
+      body: "resist"
     },
     {
       type: ACTION_TYPES.ttyTtd,

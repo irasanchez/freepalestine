@@ -5,25 +5,22 @@ import React, { memo, useRef, useState } from "react";
 interface Children {
   children: React.ReactNode;
 }
-
 // functions
 function Heading({ children }: Children) {
   return (<h3 className="card-title text-2xl p-4">
     {children}
   </h3>)
 }
-
 function Subtitle({ children }: Children) {
   return <h2 className="text-4xl text-center font-bold">{children}</h2>
 }
-
-function Title({ children }: Children) {
+function Title({ children, emoji }: {children: Children, emoji: string}) {
   // the PS is an emoji. it does not show in VSCode but works in the browser.
   return (
-    <h1 className="my-8 text-center"><span>🇵🇸 </span><br />{children}</h1>
+    // @ts-ignore
+    <h1 className="my-8 text-center text-6xl">{emoji ? <><span>{emoji}</span><br /></> : null}{children}</h1>
   )
 }
-
 function ActionButton({ children, key, handleClick }: any) {
   return (
     <button
@@ -33,19 +30,12 @@ function ActionButton({ children, key, handleClick }: any) {
     >{children}</button>
   )
 }
-
-
-
 type AutocompleteProps = {
   items: string[];
   value: string;
   onChange(val: string): void;
   selectedSpheres: string[];
 };
-
-
-
-
 //we are using dropdown, input and menu component from daisyui
 const Autocomplete = memo(PreMemoAutocomplete)
 // ^ ts gets mad if I don't define it before exporting it
@@ -72,13 +62,13 @@ function PreMemoAutocomplete(props: AutocompleteProps) {
         tabIndex={0}
       />
 
-      <div className="dropdown-content bg-base-200 top-14 max-h-96 overflow-auto flex-col rounded-md shadow-black shadow-md">
+      <div className="dropdown-content bg-base-200 top-14 max-h-96 overflow-auto flex-col rounded-md shadow-black shadow-md w-full">
         <ul
           className="menu menu-compact "
           // use ref to calculate the width of parent
           style={{ width: ref.current?.clientWidth }}
         >
-          {items.map((item, index) => {
+          {items?.map((item, index) => {
             let styles = `border-b border-b-base-content/10 w-full`
             return (
               <li
@@ -100,7 +90,6 @@ function PreMemoAutocomplete(props: AutocompleteProps) {
     </div>
   );
 };
-
 //exports
 export {
   Heading,
