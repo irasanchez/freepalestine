@@ -42,77 +42,78 @@ const ACTION_TYPES_BUTTON_LABELS = {
   sms: "Text",
 }
 
-export const ACTIONS = [{
-  icon: "🏛️",
-  label: "Contact the White House (T-Th only)",
-  id: 1,
-  spheres: [CITIZEN],
-  suggestion: ["I am calling to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
-  reminder: "⭐ The person on the other side is a volunteer. Be kind or no one will want to volunteer!",
-  actionOptions: [
-    {
-      type: ACTION_TYPES.call,
-      call: "202-456-1111",
-    },
-    {
-      type: ACTION_TYPES.sms,
-      sms: "50409",
-      body: "resist"
-    },
-    {
-      type: ACTION_TYPES.ttyTtd,
-      call: "202-456-6213"
-    },
-    {
-      type: ACTION_TYPES.write,
-      call: "202-456-6213"
-    },
-    {
-      type: ACTION_TYPES.email,
-      email: "https://www.whitehouse.gov/contact/"
-    },
-    {
-      type: ACTION_TYPES.tweet,
-      tweet: "https://twitter.com/WhiteHouse"
-    },
-    {
-      type: ACTION_TYPES.facebook,
-      facebook: "https://www.facebook.com/WhiteHouse/"
-    },
-
-  ]
-},
-{
-  icon: "📰",
-  label: "Letter to the Editor",
-  id: 1,
-  spheres: [LITERATE,],
-  actionOptions: [
-    {
-      type: ACTION_TYPES.call,
-      call: "202-456-1111",
-    },
-    ,
-    {
-      type: ACTION_TYPES.write,
-      call: "202-456-6213"
-    }
-  ]
-},
-{
-  icon: "🏛️",
-  label: "Boycott",
-  id: 1,
-  spheres: [STARBUCKS, MCDONALDS],
-  content: {
-    subheading: "Starbucks and McDonald's Boycott",
-    details: (
-      <p>McDonald's <a href="https://www.msn.com/en-us/news/world/mcdonalds-faces-boycott-for-giving-israeli-soldiers-free-food/ar-AA1ialNR" target="_blank">financially and morally support the IDF</a>.</p>
-    )
-
+export const ACTIONS = [
+  {
+    icon: "🏛️",
+    label: "Contact the White House (T-Th only)",
+    id: 1,
+    spheres: [CITIZEN],
+    suggestion: ["I am calling to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
+    reminder: "⭐ The person on the other side is a volunteer. Be kind or no one will want to volunteer!",
+    actionOptions: [
+      {
+        type: ACTION_TYPES.call,
+        call: "202-456-1111",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.call
+      },
+      {
+        type: ACTION_TYPES.sms,
+        sms: "50409",
+        body: "resist",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
+      },
+      {
+        type: ACTION_TYPES.ttyTtd,
+        call: "202-456-6213",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.ttyTtd,
+      },
+      {
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.email,
+        type: ACTION_TYPES.email,
+        email: "https://www.whitehouse.gov/contact/"
+      },
+      {
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.tweet,
+        type: ACTION_TYPES.tweet,
+        tweet: "https://twitter.com/WhiteHouse"
+      },
+      {
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.facebook,
+        type: ACTION_TYPES.facebook,
+        facebook: "https://www.facebook.com/WhiteHouse/"
+      },
+    ]
   },
-  actionOptions: [
-
-  ]
-}
+  /* Needs more details
+  {
+    icon: "📰",
+    label: "Letter to the Editor",
+    id: 1,
+    spheres: [LITERATE,],
+    actionOptions: [
+      {
+        type: ACTION_TYPES.call,
+        call: "202-456-1111",
+      },
+      ,
+      {
+        type: ACTION_TYPES.write,
+        call: "202-456-6213"
+      }
+    ]
+  },
+  */
+  {
+    icon: "🏛️",
+    label: "Boycott",
+    id: 1,
+    spheres: [MCDONALDS],
+    content: {
+      subheading: "McDonald's Boycott",
+      // details: (
+      //   <p>McDonald's <a href="https://www.msn.com/en-us/news/world/mcdonalds-faces-boycott-for-giving-israeli-soldiers-free-food/ar-AA1ialNR" target="_blank">financially and morally support the IDF</a>.</p>
+      // )
+    },
+    actionOptions: []
+  },
 ]

@@ -1,27 +1,47 @@
-# React + TypeScript + Vite
+<div align='center'>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ✊Free Palestine 
+  
+<!-- <a href='https://github.com/chroline/well_app/releases'> -->
+  
+![Static Badge](https://img.shields.io/badge/to%20the%20sea-green?label=From%20the%20river&labelColor=green&color=red)
 
-Currently, two official plugins are available:
+![ ](https://img.shields.io/badge/-%5E5.0.2-ghostwhite?labelColor=ghostwhite&style=flat&logo=typescript)
+  
+<!-- </a> -->
+  
+<!-- <a href='https://github.com/chroline/well_app/blob/main/LICENSE'>
+  
+<img src='https://img.shields.io/github/license/chroline/well_app?style=for-the-badge'>
+  
+</a> -->
+  
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br />
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<div align='center'>
+  
+## ❓About
 
-- Configure the top-level `parserOptions` property like this:
+This project helps people in the United States find actions they can take to help the people in Palestine. It takes into account that everyone is different and let's you filter in actions based on what resources you have available to you. 
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+I feel admittedly hopeless to actually stop the Israeli genocide of the Palestinian people, but I don't want to accept that defeat. I don't have much to give but my skills and time, and so this is what I am giving. 
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This project focuses on people in the United States, because that's what I know about and am the only contributer currently. 
+
+## ✍️ Contributing
+
+Interested in contributing? Sweet! Check out the issues and submit a pull request. I could especially use help setting up a privacy-friendly backend, preferably not using products that help Israel financially. 
+
+# 🌟 Spread the word!
+
+There are a lot of people who ask what they can do. This literally walks them through what they can do based on what resources/positions/skills they have. 
+
+# ⚠️ License
+
+You can use this for anything you want except for helping countries like Israel and Azerbaijan commit genocide. 
+
+# ❤️

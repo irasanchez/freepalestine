@@ -9,6 +9,7 @@ type AutocompleteProps = {
 };
 
 export default function SpheresAutocomplete(props: AutocompleteProps) {
+    let {selectedSpheres} = props;
     //a list to show on the dropdown when user types
     const [items, setItems] = useState<string[]>(SPHERES);
     const [value, setValue] = useState<string>("")
@@ -33,9 +34,9 @@ export default function SpheresAutocomplete(props: AutocompleteProps) {
     return <Autocomplete {...props} items={items} value={value} onChange={(sphere) => {
         setValue(sphere);
         //@ts-ignore
-        // setSelectedSpheres(selectedSpheres.includes(sphere) ? selectedSpheres.filter((selectedSphere) => {
-        //     return selectedSphere !== sphere
-        // }) : [...selectedSpheres, sphere])
+        setSelectedSpheres(selectedSpheres.includes(sphere) ? selectedSpheres.filter((selectedSphere) => {
+            return selectedSphere !== sphere
+        }) : [...selectedSpheres, sphere])
     }} />;
 };
 
