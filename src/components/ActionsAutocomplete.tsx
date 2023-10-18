@@ -30,7 +30,7 @@ export default function SpheresAutocomplete(props: AutocompleteProps) {
     }, [value]);
 
     //use the common auto complete component here.
-    return <Autocomplete {...props} items={items} onChange={(sphere) => {
+    return <Autocomplete {...props} items={items} value={value} onChange={(sphere) => {
         setValue(sphere);
         //@ts-ignore
         // setSelectedSpheres(selectedSpheres.includes(sphere) ? selectedSpheres.filter((selectedSphere) => {
