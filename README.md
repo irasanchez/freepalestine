@@ -4,9 +4,9 @@
   
 <!-- <a href='https://github.com/chroline/well_app/releases'> -->
   
-![Static Badge](https://img.shields.io/badge/to%20the%20sea-green?label=From%20the%20river&labelColor=green&color=red)
+![From the river to the sea](https://img.shields.io/badge/to%20the%20sea-green?label=From%20the%20river&labelColor=green&color=red)
 
-![ ](https://img.shields.io/badge/-%5E5.0.2-ghostwhite?labelColor=ghostwhite&style=flat&logo=typescript)
+![Codeberg](https://img.shields.io/badge/Codeberg-2185D0?style=for-the-badge&logo=Codeberg&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white) 
   
 <!-- </a> -->
   

@@ -36,7 +36,6 @@ const ACTION_TYPES = {
 const ACTION_TYPES_BUTTON_LABELS = {
   call: "📱 Call Now",
   email: "📧 Email Now",
-  tweet: "Tweet",
   facebook: "Facebook",
   ttyTtd: "TTY/TDD",
   sms: "Text",
@@ -47,7 +46,7 @@ export const ACTIONS = [
     icon: "🏛️",
     label: "Contact the White House (T-Th only)",
     id: 1,
-    spheres: [CITIZEN],
+    spheres: [LITERATE],
     suggestion: ["I am calling to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
     reminder: "⭐ The person on the other side is a volunteer. Be kind or no one will want to volunteer!",
     actionOptions: [
@@ -59,7 +58,7 @@ export const ACTIONS = [
       {
         type: ACTION_TYPES.sms,
         sms: "50409",
-        body: "resist",
+        body: "president",
         buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
       },
       {
@@ -72,11 +71,7 @@ export const ACTIONS = [
         type: ACTION_TYPES.email,
         email: "https://www.whitehouse.gov/contact/"
       },
-      {
-        buttonLabel: ACTION_TYPES_BUTTON_LABELS.tweet,
-        type: ACTION_TYPES.tweet,
-        tweet: "https://twitter.com/WhiteHouse"
-      },
+      
       {
         buttonLabel: ACTION_TYPES_BUTTON_LABELS.facebook,
         type: ACTION_TYPES.facebook,
@@ -84,25 +79,74 @@ export const ACTIONS = [
       },
     ]
   },
-  /* Needs more details
+  {
+    icon: "🏛️",
+    label: "Write to Congress",
+    id: 1,
+    spheres: [LITERATE],
+    suggestion: ["I am writing to urge Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
+    actionOptions: [
+      {
+        type: ACTION_TYPES.sms,
+        sms: "50409",
+        body: "congress",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
+      },
+      
+    ]
+  },
+  {
+    icon: "🏛️",
+    label: "Write to State Legislatures",
+    id: 1,
+    spheres: [LITERATE],
+    suggestion: ["I am writing to urge my state officials pressure Biden and Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
+    actionOptions: [
+      {
+        type: ACTION_TYPES.sms,
+        sms: "50409",
+        body: "legislature",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
+      },
+      
+    ]
+  },
+  {
+    icon: "🏛️",
+    label: "Write your Mayor",
+    id: 1,
+    spheres: [LITERATE],
+    suggestion: ["I am writing to urge the Mayor to pressure the federal government to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
+    actionOptions: [
+      {
+        type: ACTION_TYPES.sms,
+        sms: "50409",
+        body: "mayor",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
+      },
+      
+    ]
+  },
+  
   {
     icon: "📰",
     label: "Letter to the Editor",
     id: 1,
     spheres: [LITERATE,],
+    reminder: "⭐ Resist Bot takes your previous letter to an official and sends it to a newspaper on your behalf.",
     actionOptions: [
       {
-        type: ACTION_TYPES.call,
-        call: "202-456-1111",
+        type: ACTION_TYPES.sms,
+        sms: "50409",
+        body: "editor",
+        buttonLabel: ACTION_TYPES_BUTTON_LABELS.sms
       },
-      ,
-      {
-        type: ACTION_TYPES.write,
-        call: "202-456-6213"
-      }
     ]
   },
-  */
+
   {
     icon: "🏛️",
     label: "Boycott",
