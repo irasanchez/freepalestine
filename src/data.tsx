@@ -1,3 +1,6 @@
+F
+
+// static data
 const PALESTINIAN_AMERICAN = "I am Palestinian American";
 const CITIZEN = "I am a citizen";
 const LITERATE = "I can read/write";
@@ -9,6 +12,7 @@ const COLLEGE_STUDENT = "I am a college student";
 const EVENT = "I can get to events";
 const PRO = "I am a specialist";
 const COMPUTER = "I have a computer";
+const CONSUMER = "I buy things";
 
 export const SPHERES = [
   PALESTINIAN_AMERICAN,
@@ -22,6 +26,7 @@ export const SPHERES = [
   EVENT,
   PRO,
   COMPUTER,
+  CONSUMER
 ]
 
 const ACTION_TYPES = {
@@ -46,8 +51,8 @@ export const ACTIONS = [
     icon: "🏛️",
     label: "Contact the White House (T-Th only)",
     id: 1,
-    spheres: [LITERATE],
-    suggestion: ["I am calling to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
+    spheres: [LITERATE, CITIZEN],
+    suggestion: ["I am contacting to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],
     reminder: "⭐ The person on the other side is a volunteer. Be kind or no one will want to volunteer!",
     actionOptions: [
       {
@@ -81,10 +86,10 @@ export const ACTIONS = [
   },
   {
     icon: "🏛️",
-    label: "Write to Congress",
+    label: "Contact Congress",
     id: 1,
-    spheres: [LITERATE],
-    suggestion: ["I am writing to urge Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    spheres: [LITERATE, CITIZEN],
+    suggestion: ["I am contacting to urge Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
     reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
     actionOptions: [
       {
@@ -98,10 +103,10 @@ export const ACTIONS = [
   },
   {
     icon: "🏛️",
-    label: "Write to State Legislatures",
+    label: "Contact State Legislatures",
     id: 1,
-    spheres: [LITERATE],
-    suggestion: ["I am writing to urge my state officials pressure Biden and Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    spheres: [LITERATE, CITIZEN],
+    suggestion: ["I am contacting to urge my state officials pressure Biden and Congress to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
     reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
     actionOptions: [
       {
@@ -115,10 +120,10 @@ export const ACTIONS = [
   },
   {
     icon: "🏛️",
-    label: "Write your Mayor",
+    label: "Contact your Mayor",
     id: 1,
-    spheres: [LITERATE],
-    suggestion: ["I am writing to urge the Mayor to pressure the federal government to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
+    spheres: [LITERATE, CITIZEN],
+    suggestion: ["I am contacting to urge the Mayor to pressure the federal government to demand that Israel cease its genocide on Palestine entirely.", "In order for there to be peace, Israel needs to stop bombing.", "It is our job as one of the world's most powerful nations to help the weakest people.", "Please stop helping Israel kill defenseless people with my tax dollars."],
     reminder: "⭐ Resist Bot will walk you through emailing each of your officials. To reach the most officials, use one of these options each time: CONGRESS, LEGISLATURE, MAYOR. Staffers filter out letters with vulgar language. Be kind to get through.",
     actionOptions: [
       {
@@ -151,13 +156,12 @@ export const ACTIONS = [
     icon: "🏛️",
     label: "Boycott",
     id: 1,
-    spheres: [MCDONALDS],
+    spheres: [MCDONALDS, CONSUMER],
     content: {
       subheading: "McDonald's Boycott",
-      // details: (
-      //   <p>McDonald's <a href="https://www.msn.com/en-us/news/world/mcdonalds-faces-boycott-for-giving-israeli-soldiers-free-food/ar-AA1ialNR" target="_blank">financially and morally support the IDF</a>.</p>
-      // )
+      details: "McDonald's supports the IDF financially."
     },
     actionOptions: []
   },
 ]
+

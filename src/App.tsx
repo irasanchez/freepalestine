@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 //my components
 import { Title, Subtitle, Heading } from './components/UI'
 import ActionsList from "./components/ActionsList.tsx"
-import ActionsAutocomplete from "./components/ActionsAutocomplete.tsx"
+import SelectSpheres from "./components/SelectSpheres.tsx"
 import { Modal } from './components/Modal.tsx'
 //data
 import { ACTIONS } from './data'
@@ -55,7 +55,7 @@ function App() {
   }, [selectedSpheres])
 
   return (<>
-    <div className="prose px-8 mx-auto pt-16" >
+    <div className="px-8 pt-16 mx-auto prose" >
       <Title emoji="🇵🇸 ">
         {/* @ts-ignore */}
         <>
@@ -66,32 +66,34 @@ function App() {
         <span className="underline">Every</span> American has a role to play.
       </Subtitle>
       <Heading>
-        <div className="text-center w-full">
+        <div className="w-full text-center">
           Find yours below.
         </div>
       </Heading>
-      <div className="w-full text-center text-3xl animate-bounce mt-16">
+      <div className="mt-16 w-full text-3xl text-center animate-bounce">
         👇
       </div>
-      <section className=" mt-16  ">
-        <ActionsAutocomplete
-          selectedSpheres={selectedSpheres}
-        />
+      <section className="mt-16">
+        <SelectSpheres/>
       </section>
 
       <ActionsList actions={filteredActions} openModal={openModal} />
       <Modal selectedAction={selectedAction} selectedActionOption={selectedActionOption} />
 
     </div >
-    <footer className="bg-neutral-100 py-4 mt-16 prose p-4 mx-auto">
+    <footer className="p-4 py-4 mx-auto mt-16 bg-neutral-100 prose">
       <p className="text-center">Made with ❤️ by <a className="link" href="https://mastodon.social/@floppade" target="_blank" rel="noopener noreferrer">@floppade</a>.</p>
       <p className="text-center"><a className="link" href="https://codeberg.org/floppade/freepalestine/issues" target="_blank">Feedback</a> | <a className="link" href="https://codeberg.org/floppade/freepalestine">Code</a> </p>
+      <p>
+        This app does not collect any data.
+      </p>
 
     </footer>
   </>)
 }
 
 export default App
+
 
 
 
