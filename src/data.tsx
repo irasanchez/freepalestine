@@ -1,5 +1,3 @@
-F
-
 // static data
 const PALESTINIAN_AMERICAN = "I am Palestinian American";
 const CITIZEN = "I am a citizen";
@@ -28,7 +26,6 @@ export const SPHERES = [
   COMPUTER,
   CONSUMER
 ]
-
 const ACTION_TYPES = {
   call: "Call",
   write: "Write",
@@ -45,11 +42,12 @@ const ACTION_TYPES_BUTTON_LABELS = {
   ttyTtd: "TTY/TDD",
   sms: "Text",
 }
-
 export const ACTIONS = [
   {
     icon: "🏛️",
     label: "Contact the White House (T-Th only)",
+    reason: "Biden is the Commander-in-chief, which means he is in charge of the military. He also is the current leader of the majority party of the Senate.",
+    description: "Call the White House to demand an immediate ceasefire of Israeli aggression against Palestinian civilians",
     id: 1,
     spheres: [LITERATE, CITIZEN],
     suggestion: ["I am contacting to urge the President to demand an immediate ceasefire from Israel on Gaza.", "Gaza has no defenses and is mostly young people and children. By supporting Israel, Biden is supporting genocide.", "I won't support a president who doesn't support human rights for all people.", "Thank you for your time and for volunteering."],

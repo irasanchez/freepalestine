@@ -7,6 +7,9 @@ interface Children {
   children: React.ReactNode;
 }
 // functions
+function Emoji({ children }: Children) {
+  return <span aria-disabled={true}>{children}</span>;
+}
 function Heading({ children }: Children) {
   return <h3 className="p-4 text-2xl card-title">{children}</h3>;
 }
@@ -43,5 +46,13 @@ function ActionButton({ children, key, handleClick }: any) {
 function Content({ content }: { content: string }) {
   return <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>;
 }
+
+function Tag({ children }: Children) {
+  return (
+    <span className="px-3 mr-1 font-bold rounded-full badge-primary">
+      {children}
+    </span>
+  );
+}
 //exports
-export { Heading, Subtitle, Title, ActionButton, Content };
+export { Tag, Heading, Subtitle, Title, ActionButton, Content, Emoji };
