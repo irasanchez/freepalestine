@@ -2,7 +2,7 @@ import { Heading, ActionButton, Emoji, Tag } from "./UI";
 import {} from "../data";
 
 // sub-components are below
-export default function ActionCard({ openModal, action }: any) {
+export default function ActionCard({ openModal, action }: {openModal: any, action: any}) {
   const { label, icon, id, actionOptions, spheres } = action;
   return (
     <div className="my-2 w-full bg-gray-100 card card-normal card-bordered">
@@ -13,7 +13,12 @@ export default function ActionCard({ openModal, action }: any) {
         <ActionCardLabel label={label} />
       </div>
       <ActionCardContent action={action} />
-      <ActionOptions id={id} actionOptions={actionOptions} openModal={openModal}/>
+      <ActionOptions
+        action={action}
+        id={id}
+        actionOptions={actionOptions}
+        openModal={openModal}
+      />
       <hr />
       <div className="flex justify-end mx-2 my-4 text-xs">
         {spheres.map((sphere: string) => {
@@ -47,7 +52,17 @@ function ActionCardContent({ action }: { action: any }) {
   );
 }
 
-function ActionOptions({ actionOptions, id, openModal}) {
+function ActionOptions({
+  actionOptions,
+  id,
+  openModal,
+  action
+}: {
+  actionOptions: any;
+  id: string;
+  openModal: any;
+  action: any;
+}) {
   return (
     <div className="flex flex-wrap m-2 text-accent card-actions">
       {actionOptions.map((option: any) => {
