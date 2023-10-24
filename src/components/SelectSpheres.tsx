@@ -48,7 +48,7 @@ export default function SelectSpheres() {
         highlight: 'react-tags__listbox-option-highlight',
       }}
       labelText="Your spheres of influence:"
-      placeholderText="I am/have/buy..."
+      placeholderText="Search for a state, skill, role, community, etc."
       selected={selected}
       suggestions={suggestions}
       onAdd={onAdd}

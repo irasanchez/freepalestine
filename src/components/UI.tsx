@@ -31,25 +31,48 @@ function Title(props: any) {
     <h1 className="my-8 text-6xl text-center">{children}</h1>;
   }
 }
-function ActionButton({ children, key, handleClick }: any) {
-  return (
-    <button
-      key={key}
-      onClick={handleClick}
-      className="flex flex-nowrap justify-between items-center text-white btn btn-accent"
-    >
-      {children}
-    </button>
-  );
+function ActionButton({ children, key, handleClick, url, info, sms }: any) {
+  let className = "flex items-center justify-between mb-1 font-bold text-black flex-nowrap btn"
+  if (url || sms) {
+
+    if (!info) {
+      className += " btn-accent animate-pulse"
+    } else {
+      className += " btn-neutral text-white"
+    }
+    return (
+      <a
+        className={className}
+        href={url}
+        target="_blank"
+      >
+        {children}
+      </a>
+    );
+  } else {
+
+    if (!info) {
+      className += " btn-accent"
+    }
+    return (
+      <button
+        key={key}
+        onClick={handleClick}
+        className={className}
+      >
+        {children}
+      </button>
+    );
+  }
 }
 
 function Content({ content }: { content: string }) {
-  return <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>;
+  return <Markdown className="prose lg:prose-xl" remarkPlugins={[remarkGfm]}>{content}</Markdown>;
 }
 
 function Tag({ children }: Children) {
   return (
-    <span className="px-3 mr-1 font-bold rounded-full badge-primary">
+    <span className="inline-block px-3 py-1 mb-1 mr-1 font-bold rounded-full badge-primary min-w-fit">
       {children}
     </span>
   );

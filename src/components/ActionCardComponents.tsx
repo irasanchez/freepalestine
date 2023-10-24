@@ -1,13 +1,14 @@
+
 import { Heading, ActionButton, Emoji, Tag } from "./UI";
-import {} from "../data";
+import { ACTION_TYPES } from "../data";
 
 // sub-components are below
-export default function ActionCard({ openModal, action }: {openModal: any, action: any}) {
+export default function ActionCard({ openModal, action }: { openModal: any, action: any }) {
   const { label, icon, id, actionOptions, spheres } = action;
   return (
-    <div className="my-2 w-full bg-gray-100 card card-normal card-bordered">
+    <div className="w-full my-2 bg-gray-100 card card-normal card-bordered">
       <div className="flex flex-wrap justify-between m-2">
-        <div className="flex justify-center items-center w-full">
+        <div className="flex items-center justify-center w-full">
           <ActionIcon>{icon}</ActionIcon>
         </div>
         <ActionCardLabel label={label} />
@@ -20,11 +21,7 @@ export default function ActionCard({ openModal, action }: {openModal: any, actio
         openModal={openModal}
       />
       <hr />
-      <div className="flex justify-end mx-2 my-4 text-xs">
-        {spheres.map((sphere: string) => {
-          return <Tag key={`${id}--${sphere}`}>{sphere}</Tag>;
-        })}
-      </div>
+      <ActionCardSpheres spheres={spheres} id={id} />
     </div>
   );
 }
@@ -65,32 +62,49 @@ function ActionOptions({
 }) {
   return (
     <div className="flex flex-wrap m-2 text-accent card-actions">
-      {actionOptions.map((option: any) => {
+      {actionOptions.filter((option: any) => option.type !== ACTION_TYPES.learn).map((option: any) => {
         let icon = null;
         let key = `${id}--${option.type}`;
-        if (option.type === "Call") {
-          icon = <Emoji>📱</Emoji>;
-          return (
-            <ActionButton
-              handleClick={() => openModal(action, option.type)}
-              key={key}
-            >
-              {icon} <span>{option.type}</span>
-            </ActionButton>
-          );
+
+        switch (option.type) {
+          case ACTION_TYPES.call:
+            icon = <Emoji>📱</Emoji>;
+            break;
+          case ACTION_TYPES.email:
+            icon = <Emoji>📧</Emoji>;
+            break;
+          case ACTION_TYPES.share:
+            icon = <Emoji>📢</Emoji>;
+            break;
+          case ACTION_TYPES.ttyTtd:
+            icon = <Emoji>📱</Emoji>;
+            break;
+          case ACTION_TYPES.sms:
+            icon = <Emoji>🗨️</Emoji>;
+            break;
+          default:
+            icon = null
         }
-        if (option.type === "Write") {
-          icon = <Emoji>📧</Emoji>;
-          return (
-            <ActionButton
-              key={key}
-              handleClick={() => openModal(action, option.type)}
-            >
-              {icon} <span>{option.type}</span>
-            </ActionButton>
-          );
-        }
+
+        return (
+          <ActionButton
+            key={key}
+            handleClick={() => openModal(action, option.type)}
+          >
+            {icon} <span>{option.type}</span>
+          </ActionButton>
+        );
       })}
     </div>
   );
+}
+
+function ActionCardSpheres({ spheres, id }: { spheres: any, id: any }) {
+  return (
+    <div className="flex flex-wrap mx-2 my-4 text-xs">
+      {spheres.map((sphere: string) => {
+        return <Tag key={`${id}--${sphere}`}>{sphere}</Tag>;
+      })}
+    </div>
+  )
 }

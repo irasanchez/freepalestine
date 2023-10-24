@@ -6,7 +6,7 @@ import ActionsList from "./components/ActionsList.tsx"
 import SelectSpheres from "./components/SelectSpheres.tsx"
 import { Modal } from './components/Modal.tsx'
 //data
-import { ACTIONS } from './data'
+import { ACTIONS } from './data/index.tsx'
 //styles
 import './App.css'
 
@@ -83,7 +83,7 @@ function App() {
     </div >
     <footer className="p-4 py-4 mx-auto mt-16 bg-neutral-100 prose">
       <p className="text-center">Made with ❤️ by <a className="link" href="https://mastodon.social/@floppade" target="_blank" rel="noopener noreferrer">@floppade</a>.</p>
-      <p className="text-center"><a className="link" href="https://codeberg.org/floppade/freepalestine/issues" target="_blank">Feedback</a> | <a className="link" href="https://codeberg.org/floppade/freepalestine">Code</a> </p>
+      <p className="text-center"><a className="link" href="https://codeberg.org/floppade/freepalestine/issues" target="_blank">Feedback</a> | <a className="link" href="https://codeberg.org/floppade/freepalestine">Code</a> | Support </p>
       <p>
         This app does not collect any data.
       </p>
