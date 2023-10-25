@@ -72,7 +72,8 @@ export const ACTION_TYPES = {
   ttyTtd: "TTY/TDD",
   sms: "Text",
   share: "Share",
-  learn: "info" // hidden
+  learn: "info", // hidden
+  go: "Go"
 };
 
 // this text appears when the modal is open
@@ -82,7 +83,7 @@ export const ACTION_TYPES_BUTTON_LABELS = {
   facebook: "🌐Facebook",
   ttyTtd: "📱 TTY/TDD",
   sms: "🗨️ Text",
-  learn: "🙋🏿‍♀️ Learn More"
+  learn: "🙋🏿‍♀️ Learn More",
   go: "Let's Go! 💨"
 };
 
@@ -256,7 +257,7 @@ Thank you.`,
   },
   {
     icon: "📝",
-    label: "Petition: Pass HR3103",
+    label: "Letter to the Editor",
     id: 1,
     spheres: [LITERATE],
     reason: "The New York Times is a powerful newspaper with wide reach and is read by politicians. They also promote Zionism.",

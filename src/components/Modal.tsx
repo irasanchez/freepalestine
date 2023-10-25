@@ -1,5 +1,5 @@
 import { ACTION_TYPES } from "../data";
-import { ActionButton, Subtitle, Title, Content } from "./UI";
+import { ActionButton, Title, Content } from "./UI";
 export const Modal = ({
   selectedAction,
   selectedActionOption,
@@ -7,9 +7,6 @@ export const Modal = ({
   selectedAction: any;
   selectedActionOption: string;
 }) => {
-  const actionOption = selectedAction.actionOptions ? selectedAction?.actionOptions.find((option: any) => {
-    return option.type === selectedActionOption
-  }) : null
 
   return (
     <dialog id="action_details" className="prose modal">

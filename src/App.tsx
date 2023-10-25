@@ -14,7 +14,7 @@ import './App.css'
 function App() {
   const [selectedAction, setSelectedAction] = useState<any>({})
   const [selectedActionOption, setSelectedActionOption] = useState<string>("")
-  const [selectedSpheres, setSelectedSpheres] = useState<string[]>([])
+  const [selectedSpheres, /*setSelectedSpheres*/] = useState<string[]>([])
   const [filteredActions, setFilteredActions] = useState<any[]>(ACTIONS)
 
 
@@ -70,7 +70,7 @@ function App() {
           Find yours below.
         </div>
       </Heading>
-      <div className="mt-16 w-full text-3xl text-center animate-bounce">
+      <div className="w-full mt-16 text-3xl text-center animate-bounce">
         👇
       </div>
       <section className="mt-16">
@@ -81,7 +81,7 @@ function App() {
       <Modal selectedAction={selectedAction} selectedActionOption={selectedActionOption} />
 
     </div >
-    <footer className="p-4 py-4 mx-auto mt-16 bg-neutral-100 prose">
+    <footer className="p-4 py-4 mx-auto mt-16 prose bg-neutral-100">
       <p className="text-center">Made with ❤️ by <a className="link" href="https://mastodon.social/@floppade" target="_blank" rel="noopener noreferrer">@floppade</a>.</p>
       <p className="text-center"><a className="link" href="https://codeberg.org/floppade/freepalestine/issues" target="_blank">Feedback</a> | <a className="link" href="https://codeberg.org/floppade/freepalestine">Code</a> | Support </p>
       <p>
