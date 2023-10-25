@@ -6,7 +6,7 @@ export default function ActionsList({ actions, openModal }: any) {
             {actions.map((action: any) => {
                 return (
                     // action card
-                    < ActionCard {...{ openModal, action }} />
+                    < ActionCard key={action.label} {...{ openModal, action }} />
                 )
             })}
         </section >

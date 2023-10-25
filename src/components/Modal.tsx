@@ -1,3 +1,4 @@
+import { ACTION_TYPES } from "../data";
 import { ActionButton, Subtitle, Title, Content } from "./UI";
 export const Modal = ({
   selectedAction,
@@ -16,7 +17,6 @@ export const Modal = ({
         {/* {JSON.stringify(actionOption)} */}
         <PetitionActionWalkthrough
           selectedAction={selectedAction}
-          selectedActionOption={selectedActionOption}
         />
         <CallActionWalkthrough
           selectedAction={selectedAction}
@@ -34,20 +34,15 @@ export const Modal = ({
 };
 
 function PetitionActionWalkthrough({
-  selectedActionOption,
   selectedAction,
 }: {
-  selectedActionOption: string;
   selectedAction: any;
 }) {
   let { label } = selectedAction;
-  if (selectedActionOption !== "Call") {
+  if (selectedAction.label.includes("Petition")) {
     return (<section>
       <Title emoji="📝">{label}</Title>
       <ActionWalkthroughReminder reminder={selectedAction.reminder} />
-
-
-
       <div tabIndex={0} className="border collapse collapse-arrow border-base-300 bg-base-200">
         <div className="text-xl font-medium collapse-title">
           Read the petition
@@ -62,13 +57,6 @@ function PetitionActionWalkthrough({
           return <ActionButton {...option}>{option.buttonLabel}</ActionButton>
         })}
       </div>
-      {/* <a
-        className="w-full text-2xl font-bold text-black animate-pulse btn btn-accent"
-        href={"tel:" + selectedAction.phone}
-      >
-        {" "}
-        📱Call Now
-      </a> */}
     </section>)
   } else {
     return null
@@ -83,7 +71,7 @@ function CallActionWalkthrough({
   selectedAction: any;
 }) {
   let { label } = selectedAction;
-  if (selectedActionOption === "Call") {
+  if (selectedActionOption === ACTION_TYPES.call || selectedActionOption === ACTION_TYPES.ttyTtd) {
     return (
       <section>
         <Title emoji="🏛️">{label}</Title>
@@ -93,7 +81,7 @@ function CallActionWalkthrough({
           className="w-full text-2xl font-bold text-black animate-pulse btn btn-accent"
           href={"tel:" + selectedAction.phone}
         >
-
+          📱Call Now
         </a>
       </section>
     );

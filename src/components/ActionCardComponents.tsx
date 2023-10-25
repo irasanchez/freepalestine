@@ -32,7 +32,7 @@ function ActionIcon({ children }: { children: string }) {
 
 function ActionCardLabel({ label }: { label: string }) {
   return (
-    <Heading>
+    <Heading className="text-center">
       <span className="block">{label}</span>
     </Heading>
   );

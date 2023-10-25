@@ -82,7 +82,8 @@ export const ACTION_TYPES_BUTTON_LABELS = {
   facebook: "🌐Facebook",
   ttyTtd: "📱 TTY/TDD",
   sms: "🗨️ Text",
-  learn: "🙋🏿‍♀️ Learn more"
+  learn: "🙋🏿‍♀️ Learn More"
+  go: "Let's Go! 💨"
 };
 
 export const SPHERES = [
@@ -219,7 +220,7 @@ Thank you.`,
 
   {
     icon: "📝",
-    label: "Petition",
+    label: "Petition: Pass HR3103",
     id: 1,
     spheres: [LITERATE],
     reason: "The United States funds Israel's military (using your taxes) and also provides soldiers. American soldiers signed up thinking they would protect human rights, not violate them.",
@@ -253,19 +254,30 @@ Thank you.`,
       },
     ],
   },
+  {
+    icon: "📝",
+    label: "Petition: Pass HR3103",
+    id: 1,
+    spheres: [LITERATE],
+    reason: "The New York Times is a powerful newspaper with wide reach and is read by politicians. They also promote Zionism.",
+    description: "Write a brief letter to the New York Times Editorial Board demanding they promote a ceasefire.",
+// prettier-ignore-start
+    suggestion: null,
+    // prettier-ignore-end
+    reminder: null,
+    actionOptions: [
+      {
+        type: ACTION_TYPES.go,
+        url: "https://www.jewishvoiceforpeace.org/take-action/",
+        buttonLabel: "HR3103 Source",
+        info: false,
+      },
+    ],
+  },
 
   {
     icon: "💸",
-    label: "Boycott",
-    id: 1,
-    spheres: [MCDONALDS, CONSUMER, STARBUCKS, DISNEY],
-    reason: "These companies support Israel and/or actively punish employees who support Palestinians.",
-    description: "While there are many companies that support Israel's apartheid, we are focusing on the boycott on these three for maximum impact.",
-    actionOptions: [],
-  },
-  {
-    icon: "🏛️",
-    label: "Boycott",
+    label: "Boycott McDonald's, Starbucks, and Disney",
     id: 1,
     spheres: [MCDONALDS, CONSUMER, STARBUCKS, DISNEY],
     reason: "These companies support Israel and/or actively punish employees who support Palestinians.",

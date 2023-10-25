@@ -10,8 +10,12 @@ interface Children {
 function Emoji({ children }: Children) {
   return <span aria-disabled={true}>{children}</span>;
 }
-function Heading({ children }: Children) {
-  return <h3 className="p-4 text-2xl card-title">{children}</h3>;
+function Heading({ children, className }: any) {
+  let classes = "p-4 text-2xl card-title w-full flex items-center justify-center text-center"
+  if (className){
+    classes += " " + className
+  }
+  return <h3 className={classes}>{children}</h3>;
 }
 function Subtitle({ children }: Children) {
   return <h2 className="text-4xl font-bold text-center">{children}</h2>;
