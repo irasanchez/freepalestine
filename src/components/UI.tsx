@@ -35,7 +35,7 @@ function Title(props: any) {
     <h1 className="my-8 text-6xl text-center">{children}</h1>;
   }
 }
-function ActionButton({ children, key, handleClick, url, info, sms }: any) {
+function ActionButton({ children, keyName, handleClick, url, info, sms }: any) {
   let className = "flex items-center justify-between mb-1 font-bold text-black flex-nowrap btn"
   if (url || sms) {
 
@@ -60,7 +60,7 @@ function ActionButton({ children, key, handleClick, url, info, sms }: any) {
     }
     return (
       <button
-        key={key}
+        key={keyName}
         onClick={handleClick}
         className={className}
       >

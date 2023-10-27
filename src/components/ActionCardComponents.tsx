@@ -31,11 +31,15 @@ function ActionIcon({ children }: { children: string }) {
 }
 
 function ActionCardLabel({ label }: { label: string }) {
-  return (
-    <Heading className="text-center">
-      <span className="block">{label}</span>
-    </Heading>
-  );
+  if (label){
+    return (
+      <Heading className="text-center">
+        <span className="block">{label}</span>
+      </Heading>
+    );
+  } else {
+    null
+  }
 }
 
 function ActionCardContent({ action }: { action: any }) {
@@ -88,7 +92,7 @@ function ActionOptions({
 
         return (
           <ActionButton
-            key={key}
+            keyName={key}
             handleClick={() => openModal(action, option.type)}
           >
             {icon} <span>{option.type}</span>
