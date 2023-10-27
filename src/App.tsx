@@ -1,10 +1,13 @@
 //libraries
 import { useEffect, useState } from 'react'
+//@ts-ignore
+import SEO from '@americanexpress/react-seo';
 //my components
 import { Title, Subtitle, Heading } from './components/UI'
 import ActionsList from "./components/ActionsList.tsx"
 import SelectSpheres from "./components/SelectSpheres.tsx"
 import { Modal } from './components/Modal.tsx'
+import palestineflag from "./assets/palestineflag.svg"
 //data
 import { ACTIONS } from './data/index.tsx'
 //styles
@@ -55,6 +58,15 @@ function App() {
   }, [selectedSpheres])
 
   return (<>
+    <SEO
+      title="Free Palestine"
+      description="A tool for helping Americans take action against genocide. Free Palestine!"
+      keywords={["israel", "stand with israel", "jewish", "jewish voice for peace", "if not now", "not in our name", "palestine", "free palestine", "genocide", "apartheid", "state", "two-state", "one-state", "united states", "america", "colonization", "direct action", "activism", "help", "palestinian", "human rights"]}
+      siteUrl={palestineflag}
+      image={{
+        src:"https://seekflag.com/app/uploads/2021/12/Palestine-44.svg"
+      }}
+    />
     <div className="px-8 pt-16 mx-auto prose" >
       <Title emoji="🇵🇸 ">
         {/* @ts-ignore */}
@@ -74,7 +86,7 @@ function App() {
         👇
       </div>
       <section className="mt-16">
-        <SelectSpheres/>
+        <SelectSpheres />
       </section>
 
       <ActionsList actions={filteredActions} openModal={openModal} />

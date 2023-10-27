@@ -35,6 +35,9 @@ function PetitionActionWalkthrough({
 }: {
   selectedAction: any;
 }) {
+  if (Object.keys(selectedAction).length === 0) {
+    return null
+  }
   let { label } = selectedAction;
   if (selectedAction.label.includes("Petition")) {
     return (<section>
